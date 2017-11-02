@@ -18,6 +18,8 @@ class CreateEmployeedataTable extends Migration
             $table->string('Name');
             $table->string('Address');
             $table->string('PhoneNumber');
+            $table->string('Email');
+            $table->string('CompanyName');
             $table->timestamps();
         });
     }

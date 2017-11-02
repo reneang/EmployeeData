@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAddDeletedToEmployeedata extends Migration
+class ResignationreasonToEmployeedata extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class CreateAddDeletedToEmployeedata extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('employeedata', function (Blueprint $table) {
+            $table->string('ResignatationReason');
+    });
     }
 
     /**
@@ -23,6 +25,8 @@ class CreateAddDeletedToEmployeedata extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('employeedata', function (Blueprint $table) {
+            $table->dropColumn('ResignationReason');
+        });
     }
 }

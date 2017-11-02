@@ -19,8 +19,20 @@
         <label for="InputNumber">Phone Number : </label>
         <input type="number" class="form-control" placeholder="Phone Number" name="number">
       </div>
+      <div class="form-group">
+        <label for="InputNumber">Email Address : </label>
+        <input type="email" class="form-control" placeholder="Email Address" name="email">
+      </div>
+      <div class="form-group">
+        <label for="InputNumber">Company Name : </label>
+        <input type="text" class="form-control" placeholder="Company Name" name="company">
+      </div>
     <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Data</button>
+    <a href="/" class="btn btn-default"> Employee List </a>
+    <a href="/employeeresign" class="btn btn-default"> Resignation Reason</a>
     </form>
   </div>
+
 </div>
 @endsection
+

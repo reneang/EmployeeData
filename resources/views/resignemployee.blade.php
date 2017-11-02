@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
     <div style="text-align: center; font-family: 'Oswald'">
-  <h1> User List </h1>
+  <h1> Resigned Employee </h1>
     </div>
 <div class="col-xs-12 col-md-12">
 <table class="table table-striped table-bordered">
@@ -11,25 +11,35 @@
       <th>Address</th>
       <th>Email Address</th>
       <th>Company Name</th>
-      <th>Action</th>
+      <th>Resignation Reason</th>
+      <th>Submit Reason</th>
     </tr>
     @foreach($data as $d)
-    <form action="{{ url('/deleteemployee/' . $d->id) }}" method="POST">
-    {{ csrf_field() }} 
     <tr>
       <td> {{ $d -> Name }} </td>
       <td> {{ $d -> PhoneNumber }}  </td>
       <td> {{ $d -> Address }}  </td>
       <td> {{ $d -> EmailAddress }}  </td>
       <td> {{ $d -> CompanyName }}  </td>
+      <td> {{ $d -> ResignationReason }}</td>
       <td>
-        <button type="submit" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
+      <form action="/createresign" method="POST">
+      {{ csrf_field() }} 
+      <div class="form-group">
+        <input type="hidden" name="id" value="{{ $d -> id }}">
+        <label for="InputReason">Resignation Reason : </label>
+        <input type="text" class="form-control" placeholder="Reason" name="resign">
+        <input type="submit" value="submit">
+      </div>
       </td>
     </tr>
     </form>
   @endforeach
+
 </table>
   <a href="/employeeadd" class="btn btn-default"> Add Employee </a>
-    <a href="/employeeresign" class="btn btn-default"> Resignation Reason</a>
+  <a href="/" class="btn btn-default"> Employee List </a>
 </div>
+
 @endsection
+

@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/employeelist', 'EmployeeController@GetEmployee');
+Route::get('/', 'EmployeeController@GetEmployee');
+Route::get('/employeeresign', 'EmployeeController@ResignEmployee');
+Route::get('/employeeadd', 'EmployeeController@EmployeeAdd');
 Route::post('/createemployee', 'EmployeeController@AddEmployee');
 Route::post('/deleteemployee/{id}', 'EmployeeController@DeleteEmployee');
+Route::post('/createresign', 'EmployeeController@AddResign');
 
-Route::get('/', function () {
-    return view('createemployee');
-});
